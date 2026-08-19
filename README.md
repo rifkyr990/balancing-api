@@ -33,6 +33,38 @@ Langkah langkahnya:
 2. angka rencana awal gede: supaya ga kena Integer Overflow pas ngitung total sum.
 3. tie dengan sisa: supaya urutan pembagian sisa tetep konsisten dan ga ngacak pas ada nilai awal yang sama.
 
+## Case 2 - Application & Persistence Architecture
+
+## Pemodelan Data
+
+1. Struktur data dipisah menjadi 2 entity dengan relasi one to many:
+
+2. Planning (Header): Menyimpan metadata transaksi seperti PlanningId, RequestCode (Unique), CandidateToken, CreatedAt, dan Status.
+
+3. PlanningSlot (Detail): Menyimpan rincian slot produksi seperti SlotOrder, SlotName, OriginalQuantity, BalancedQuantity, dan IsActive.
+
+Alasan Pemodelan: Pemisahan ini mempermudah pencarian histori transaksi header tanpa memuat seluruh slot data jika tidak diperlukan, serta mendukung jumlah slot yang dinamis.
+
+## Environment & Versi Runtime
+
+- **Runtime / SDK:** .NET 8/10 SDK
+- **Database:** PostgreSQL (Lokal atau Docker)
+- **Framework:** Entity Framework Core (Npgsql Provider)
+
+## Cara Menjalankan Aplikasi
+
+1. Persiapkan Database PostgreSQL  
+   Pastikan service PostgreSQL di komputer sudah berjalan.
+
+2. Konfigurasi Connection String  
+   Buka file `appsettings.json` dan sesuaikan koneksi PostgreSQL lokal, contoh:
+
+"ConnectionStrings": {
+"DefaultConnection": "Host=localhost;Port=5432;Database=balancing_db;Username=postgres;Password=postgres"
+}
+
+3. jalankan dotnet run pada powershell/cmd
+
 ## Referensi & Dokumentasi Pendukung
 
 Pengerjaan Case 1 mengacu pada dokumentasi resmi Microsoft C# / .NET untuk manipulasi array, LINQ, serta dasar-dasar pembuatan automated testing:
