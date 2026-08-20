@@ -39,10 +39,7 @@ public class BalancingService
         int sisa = totalSum % indexAktif.Count;
 
         // urutkan berdasarkan nilai awal terbesar, lalu posisi terawal
-        indexAktif = indexAktif
-            .OrderByDescending(idx => plan[idx])
-            .ThenBy(idx => idx)
-            .ToList();
+        indexAktif = indexAktif.OrderByDescending(idx => plan[idx]).ThenBy(idx => idx).ToList();
 
         int[] hasil = new int[plan.Length];
 

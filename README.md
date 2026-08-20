@@ -63,7 +63,7 @@ Alasan Pemodelan: Pemisahan ini mempermudah pencarian histori transaksi header t
 "DefaultConnection": "Host=localhost;Port=5432;Database=balancing_db;Username=postgres;Password=postgres"
 }
 
-3. jalankan dotnet run pada powershell/cmd
+3. jalankan 'dotnet run' pada powershell/cmd, sedangakan untuk menjalankan unit testing API 'dotnet run -- --run-tests'
 
 ## Referensi & Dokumentasi Pendukung
 
@@ -88,3 +88,7 @@ Pengerjaan Case 1 mengacu pada dokumentasi resmi Microsoft C# / .NET untuk manip
 - Array.Copy Method  
   [https://learn.microsoft.com/en-us/dotnet/api/system.array.copy](https://learn.microsoft.com/en-us/dotnet/api/system.array.copy)  
   Digunakan untuk duplikasi array secara aman tanpa merubah input asli.
+
+- Entity Framework Core PostgreSQL Provider (Npgsql):
+  [https://learn.microsoft.com/en-us/ef/core/providers/npgsql/](https://learn.microsoft.com/en-us/ef/core/providers/npgsql/)
+  setup postgre pada entity framework.
