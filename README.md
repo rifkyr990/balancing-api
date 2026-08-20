@@ -57,13 +57,15 @@ Alasan Pemodelan: Pemisahan ini mempermudah pencarian histori transaksi header t
    Pastikan service PostgreSQL di komputer sudah berjalan.
 
 2. Konfigurasi Connection String  
-   Buka file `appsettings.json` dan sesuaikan koneksi PostgreSQL lokal, contoh:
+   Buka file `appsettings.sample.json` dan sesuaikan koneksi PostgreSQL lokal, contoh:
 
 "ConnectionStrings": {
 "DefaultConnection": "Host=localhost;Port=5432;Database=balancing_db;Username=postgres;Password=postgres"
 }
 
-3. jalankan 'dotnet run' pada powershell/cmd, sedangakan untuk menjalankan unit testing API 'dotnet run -- --run-tests'
+3. rename file `appsettings.sample.json` jadi file `appsettings.json`
+4. selanjutnya `dotnet build terlebih dahulu`
+5. jalankan 'dotnet run' pada powershell/cmd, sedangakan untuk menjalankan unit testing API 'dotnet run -- --run-tests'
 
 ## Referensi & Dokumentasi Pendukung
 
@@ -92,3 +94,37 @@ Pengerjaan Case 1 mengacu pada dokumentasi resmi Microsoft C# / .NET untuk manip
 - Entity Framework Core PostgreSQL Provider (Npgsql):
   [https://learn.microsoft.com/en-us/ef/core/providers/npgsql/](https://learn.microsoft.com/en-us/ef/core/providers/npgsql/)
   setup postgre pada entity framework.
+
+- Flow diagram aplikasi.
+<p align="center">
+  <img 
+    src="https://i.ibb.co.com/5hWSf4hG/API-Request-Handling-2026-08-20-004241.png" 
+    width="300"
+    alt="API Request Handling"
+  >
+</p>
+
+- Design Pattern aplikasi.
+
+<p align="center">
+  <img 
+    src="https://i.ibb.co.com/8gDmh3KM/API-Request-Handling-2026-08-20-005914.png"
+    width="600"
+    alt="API Request Handling"
+  >
+</p>
+
+- Database design.
+
+<p align="center">
+  <img 
+    src="https://i.ibb.co.com/CpW9xGfz/employee-public-payment.png"
+    width="400"
+    alt="API Request Handling"
+  >
+</p>
+
+## Query
+
+FileQuery  
+ [https://drive.google.com/file/d/1pQSzvI0IWPeLmHURGMqIHcM2uSFlDcmL/view?usp=sharing](https://drive.google.com/file/d/1pQSzvI0IWPeLmHURGMqIHcM2uSFlDcmL/view?usp=sharing)
